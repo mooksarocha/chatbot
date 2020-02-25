@@ -155,11 +155,10 @@ if ( sizeof($request_array['events']) > 0 ) {
         
     }
 }
-// Message Event = TextMessage
 	if (($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
 		$messageText=strtolower(trim($event->getText()));
-		switch ($messageText) {
-case "มหาวิทยาลัยนเรศวร" :
+		switch ($มหาวิทยาลัยนเรศวร) {
+case "location" :
 			$outputText = new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder("มหาวิทยาลัยนเรศวร", "ตำบลท่าโพธิ์,อำเภอเมือง,พิษณุโลก,65000", 16.746208,100.191671);
 			break;
 echo "OK";
