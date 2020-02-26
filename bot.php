@@ -54,6 +54,13 @@
         $arrayPostData['messages'][1]['stickerId'] = "131";
         replyMsg($arrayHeader,$arrayPostData);
     }
+Message Type "video"
+    if($message == "คลิปทำครัว"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "video";
+        $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/watch?v=aEv8C2BzKtg";//ใส่ url ของ video ที่ต้องการส่ง
+        replyMsg($arrayHeader,$arrayPostData);
+    }
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
