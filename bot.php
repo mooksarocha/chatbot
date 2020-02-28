@@ -49,13 +49,13 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Location"
-    else if($message == "พิกัดสยามพารากอน"){
+    else if($message == "พิกัดมหาวิทยาลัยนเรศวร"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "location";
-        $arrayPostData['messages'][0]['title'] = "สยามพารากอน";
-        $arrayPostData['messages'][0]['address'] =   "13.7465354,100.532752";
-        $arrayPostData['messages'][0]['latitude'] = "13.7465354";
-        $arrayPostData['messages'][0]['longitude'] = "100.532752";
+        $arrayPostData['messages'][0]['title'] = "มหาวิทยาลัยนเรศวร";
+        $arrayPostData['messages'][0]['address'] =   "16.7464807,100.1911128";
+        $arrayPostData['messages'][0]['latitude'] = "16.7464807";
+        $arrayPostData['messages'][0]['longitude'] = "100.1911128";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
