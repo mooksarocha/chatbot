@@ -9,7 +9,7 @@
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
     //รับข้อความจากผู้ใช้
-    $message = $arrayJson['events'][0]['message']['text'];
+   $message = $arrayJson['events'][0]['message']['text'];
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -17,16 +17,17 @@
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
-else{
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJs
+    else if($message == "ชื่ออะไร"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ฉันชื่อน้อยน้อยหน่า";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+    #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "sticker";
-        $arrayPostData['messages'][0]['pon['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
-    #ตัวอย่าง Message Type "Sticker"ackageId'] = "2";
+        $arrayPostData['messages'][0]['packageId'] = "2";
         $arrayPostData['messages'][0]['stickerId'] = "46";
         replyMsg($arrayHeader,$arrayPostData);
     }
@@ -40,13 +41,13 @@ else{
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Location"
-    else if($message == "พิกัดมหาวิทยาลัยนเรศวร"){
+    else if($message == "พิกัดสยามพารากอน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "location";
-        $arrayPostData['messages'][0]['title'] = "มหาวิทยาลัยนเรศวร";
-        $arrayPostData['messages'][0]['address'] =   "16.746702,100.193387";
-        $arrayPostData['messages'][0]['latitude'] = "16.746702";
-        $arrayPostData['messages'][0]['longitude'] = "100.193387";
+        $arrayPostData['messages'][0]['title'] = "สยามพารากอน";
+        $arrayPostData['messages'][0]['address'] =   "13.7465354,100.532752";
+        $arrayPostData['messages'][0]['latitude'] = "13.7465354";
+        $arrayPostData['messages'][0]['longitude'] = "100.532752";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
