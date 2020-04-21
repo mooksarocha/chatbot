@@ -11,7 +11,7 @@
   $username = "root";
   $password = "";
   $dbname = "LINE";
-  $mysql = new mysqli(Databases, postgres, postgres, chatbot);
+  $mysql = new mysqli($Databases, $postgres, $postgres, $chatbot);
   mysqli_set_charset($mysql, "utf8");
 
   if ($mysql->connect_error){
