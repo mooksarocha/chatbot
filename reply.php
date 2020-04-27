@@ -8,8 +8,8 @@
   $timestamp = $jsonData["events"][0]["timestamp"];
 
   $servername = "localhost";
-  $username = "postgres";
-  $password = "postgres";
+  $username = "root";
+  $password = "";
   $dbname = "chatbot";
   $mysql = new mysqli($servername, $username, $password, $dbname);
   mysqli_set_charset($mysql, "utf8");
