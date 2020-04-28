@@ -8,7 +8,7 @@
   $timestamp = $jsonData["events"][0]["timestamp"];
 
   $servername = "localhost";
-  $username = "chatbot";
+  $username = "root";
   $password = "";
   $dbname = "chatbot";
   $mysql = new mysqli($servername, $username, $password, $dbname);
