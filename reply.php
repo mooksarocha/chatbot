@@ -9,7 +9,7 @@
 
   $servername = "localhost";
   $username = "root";
-  $password = "";
+  $password = "mook089";
   $dbname = "chatbot";
   $mysql = new mysqli($servername, $username, $password, $dbname);
   mysqli_set_charset($mysql, "utf8");
